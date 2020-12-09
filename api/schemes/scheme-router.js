@@ -5,7 +5,7 @@ const Schemes = require('./scheme-model.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  Schemes.find()
+  Schemes.find(req.query)
     .then(schemes => {
       res.json(schemes);
     })
